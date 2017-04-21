@@ -1,0 +1,2834 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >thumbd (v2.19.0)</a>
+</h1>
+<h4>Node.js/AWS/ImageMagick-based image thumbnailing service.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd">module thumbd</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Client">
+            function <span class="apidocSignatureSpan">thumbd.</span>Client
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Grabber">
+            function <span class="apidocSignatureSpan">thumbd.</span>Grabber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Saver">
+            function <span class="apidocSignatureSpan">thumbd.</span>Saver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer">
+            function <span class="apidocSignatureSpan">thumbd.</span>Thumbnailer
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker">
+            function <span class="apidocSignatureSpan">thumbd.</span>Worker
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.knox">
+            function <span class="apidocSignatureSpan">thumbd.</span>knox
+            <span class="apidocSignatureSpan">(bucket, region)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>Client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>Config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>Grabber.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>Saver.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>Thumbnailer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>Worker.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>client</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>grabber</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>logger</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>saver</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>thumbnailer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.</span>worker</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Client">module thumbd.Client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Client.Client">
+            function <span class="apidocSignatureSpan">thumbd.</span>Client
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Client.prototype">module thumbd.Client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Client.prototype.thumbnail">
+            function <span class="apidocSignatureSpan">thumbd.Client.prototype.</span>thumbnail
+            <span class="apidocSignatureSpan">(originalImagePaths, thumbnailDescriptions, opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Client.prototype.upload">
+            function <span class="apidocSignatureSpan">thumbd.Client.prototype.</span>upload
+            <span class="apidocSignatureSpan">(source, destination, opts, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Config">module thumbd.Config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Config.all">
+            function <span class="apidocSignatureSpan">thumbd.Config.</span>all
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Config.extend">
+            function <span class="apidocSignatureSpan">thumbd.Config.</span>extend
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Config.get">
+            function <span class="apidocSignatureSpan">thumbd.Config.</span>get
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Config.remove">
+            function <span class="apidocSignatureSpan">thumbd.Config.</span>remove
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Config.set">
+            function <span class="apidocSignatureSpan">thumbd.Config.</span>set
+            <span class="apidocSignatureSpan">(name, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">thumbd.Config.</span>config</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Grabber">module thumbd.Grabber</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Grabber.Grabber">
+            function <span class="apidocSignatureSpan">thumbd.</span>Grabber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Grabber.prototype">module thumbd.Grabber.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Grabber.prototype.download">
+            function <span class="apidocSignatureSpan">thumbd.Grabber.prototype.</span>download
+            <span class="apidocSignatureSpan">(bucket, region, remoteImagePath, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Grabber.prototype.getFileHTTP">
+            function <span class="apidocSignatureSpan">thumbd.Grabber.prototype.</span>getFileHTTP
+            <span class="apidocSignatureSpan">(remoteImagePath, localImagePath, stream, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Grabber.prototype.getFileS3">
+            function <span class="apidocSignatureSpan">thumbd.Grabber.prototype.</span>getFileS3
+            <span class="apidocSignatureSpan">(bucket, region, remoteImagePath, localImagePath, stream, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Grabber.prototype.getMeta">
+            function <span class="apidocSignatureSpan">thumbd.Grabber.prototype.</span>getMeta
+            <span class="apidocSignatureSpan">(res)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Saver">module thumbd.Saver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Saver.Saver">
+            function <span class="apidocSignatureSpan">thumbd.</span>Saver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Saver.prototype">module thumbd.Saver.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Saver.prototype.destinationFromURL">
+            function <span class="apidocSignatureSpan">thumbd.Saver.prototype.</span>destinationFromURL
+            <span class="apidocSignatureSpan">(destination)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Saver.prototype.save">
+            function <span class="apidocSignatureSpan">thumbd.Saver.prototype.</span>save
+            <span class="apidocSignatureSpan">(bucket, region, source, destination, metadata, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Thumbnailer">module thumbd.Thumbnailer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.Thumbnailer">
+            function <span class="apidocSignatureSpan">thumbd.</span>Thumbnailer
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Thumbnailer.prototype">module thumbd.Thumbnailer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.prototype._guessStrategy">
+            function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>_guessStrategy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.prototype.bounded">
+            function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>bounded
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.prototype.createConversionPath">
+            function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>createConversionPath
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.prototype.execCommand">
+            function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>execCommand
+            <span class="apidocSignatureSpan">(command)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.prototype.execute">
+            function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>execute
+            <span class="apidocSignatureSpan">(description, localPaths, onComplete)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.prototype.fill">
+            function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>fill
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.prototype.manual">
+            function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>manual
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.prototype.matted">
+            function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>matted
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Thumbnailer.prototype.strict">
+            function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>strict
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Worker">module thumbd.Worker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.Worker">
+            function <span class="apidocSignatureSpan">thumbd.</span>Worker
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.Worker.prototype">module thumbd.Worker.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype._createThumbnails">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_createThumbnails
+            <span class="apidocSignatureSpan">(s3Downloads, job, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype._deleteJob">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_deleteJob
+            <span class="apidocSignatureSpan">(handle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype._downloadFromS3">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_downloadFromS3
+            <span class="apidocSignatureSpan">(bucket, region, remoteImagePath, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype._nextJob">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_nextJob
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype._notify">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_notify
+            <span class="apidocSignatureSpan">(job, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype._processSQSMessage">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_processSQSMessage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype._runJob">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_runJob
+            <span class="apidocSignatureSpan">(handle, job, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype._saveThumbnailToS3">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_saveThumbnailToS3
+            <span class="apidocSignatureSpan">(bucket, region, convertedImagePath, remoteImagePath, metadata, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype._thumbnailKey">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_thumbnailKey
+            <span class="apidocSignatureSpan">(prefix, suffix, format)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.Worker.prototype.start">
+            function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.client">module thumbd.client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.client.Client">
+            function <span class="apidocSignatureSpan">thumbd.client.</span>Client
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.grabber">module thumbd.grabber</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.grabber.Grabber">
+            function <span class="apidocSignatureSpan">thumbd.grabber.</span>Grabber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.logger">module thumbd.logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.logger.error">
+            function <span class="apidocSignatureSpan">thumbd.logger.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.logger.info">
+            function <span class="apidocSignatureSpan">thumbd.logger.</span>info
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.logger.warn">
+            function <span class="apidocSignatureSpan">thumbd.logger.</span>warn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.saver">module thumbd.saver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.saver.Saver">
+            function <span class="apidocSignatureSpan">thumbd.saver.</span>Saver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.thumbnailer">module thumbd.thumbnailer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.thumbnailer.Thumbnailer">
+            function <span class="apidocSignatureSpan">thumbd.thumbnailer.</span>Thumbnailer
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.utils">module thumbd.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.utils.s3">
+            function <span class="apidocSignatureSpan">thumbd.utils.</span>s3
+            <span class="apidocSignatureSpan">(_bucket, _region)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.thumbd.worker">module thumbd.worker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.thumbd.worker.Worker">
+            function <span class="apidocSignatureSpan">thumbd.worker.</span>Worker
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd" id="apidoc.module.thumbd">module thumbd</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Client" id="apidoc.element.thumbd.Client">
+        function <span class="apidocSignatureSpan">thumbd.</span>Client
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(opts) {
+  // update client instance and config
+  // with overrides from opts.
+  _.extend(this, {
+    Saver: require(&#x27;./saver&#x27;).Saver
+  }, opts)
+
+  config.extend(opts)
+
+  // allow sqs to be overridden
+  // in tests.
+  if (opts &#x26;&#x26; opts.sqs) {
+    this.sqs = opts.sqs
+    delete opts.sqs
+  } else {
+    this.sqs = new aws.SQS({
+      accessKeyId: config.get(&#x27;awsKey&#x27;),
+      secretAccessKey: config.get(&#x27;awsSecret&#x27;),
+      region: config.get(&#x27;awsRegion&#x27;)
+    })
+  }
+
+  config.set(&#x27;sqsQueueUrl&#x27;, this.sqs.endpoint.protocol + &#x27;//&#x27; + this.sqs.endpoint.hostname + &#x27;/&#x27; + config.get(&#x27;sqsQueue&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// allow region/bucket to vary on a job by job basis.
+if (argv.bucket) extraOpts.bucket = argv.bucket
+if (argv.aws_region) extraOpts.region = argv.aws_region
+if (argv.image_region) extraOpts.region = argv.image_region
+
+config.extend(opts)
+
+var client = new thumbd.<span class="apidocCodeKeywordSpan">Client</span>()
+var logger = require(config.get(&#x27;logger&#x27;))
+
+client.thumbnail(
+  opts.remoteImage,
+  JSON.parse(fs.readFileSync(opts.descriptions).toString()),
+  extraOpts,
+  function (err, res) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Grabber" id="apidoc.element.thumbd.Grabber">
+        function <span class="apidocSignatureSpan">thumbd.</span>Grabber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Grabber() {
+  this.logger = require(config.get(&#x27;logger&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+switch (mode) {
+case &#x27;server&#x27;:
+
+  opts = buildOpts(serverOpts)
+  config.extend(opts)
+
+  var grabber = new thumbd.<span class="apidocCodeKeywordSpan">Grabber</span>()
+  var saver = new thumbd.Saver();(new thumbd.Worker({
+    saver: saver,
+    grabber: grabber
+  })).start()
+  break
+
+case &#x27;thumbnail&#x27;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Saver" id="apidoc.element.thumbd.Saver">
+        function <span class="apidocSignatureSpan">thumbd.</span>Saver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Saver() {
+  this.logger = require(config.get(&#x27;logger&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+switch (mode) {
+case &#x27;server&#x27;:
+
+  opts = buildOpts(serverOpts)
+  config.extend(opts)
+
+  var grabber = new thumbd.Grabber()
+  var saver = new thumbd.<span class="apidocCodeKeywordSpan">Saver</span>();(new thumbd.Worker({
+    saver: saver,
+    grabber: grabber
+  })).start()
+  break
+
+case &#x27;thumbnail&#x27;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer" id="apidoc.element.thumbd.Thumbnailer">
+        function <span class="apidocSignatureSpan">thumbd.</span>Thumbnailer
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Thumbnailer(opts) {
+  // for the benefit of testing
+  // perform dependency injection.
+  _.extend(this, {
+    tmp: require(&#x27;tmp&#x27;),
+    logger: require(config.get(&#x27;logger&#x27;))
+  }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker" id="apidoc.element.thumbd.Worker">
+        function <span class="apidocSignatureSpan">thumbd.</span>Worker
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Worker(opts) {
+  _.extend(this, {
+    grabber: null,
+    saver: null,
+    logger: require(config.get(&#x27;logger&#x27;))
+  }, opts)
+
+  this.sqs = new aws.SQS({
+    accessKeyId: config.get(&#x27;awsKey&#x27;),
+    secretAccessKey: config.get(&#x27;awsSecret&#x27;),
+    region: config.get(&#x27;awsRegion&#x27;)
+  })
+
+  config.set(&#x27;sqsQueueUrl&#x27;, this.sqs.endpoint.protocol + &#x27;//&#x27; + this.sqs.endpoint.hostname + &#x27;/&#x27; + config.get(&#x27;sqsQueue&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+switch (mode) {
+case &#x27;server&#x27;:
+
+  opts = buildOpts(serverOpts)
+  config.extend(opts)
+
+  var grabber = new thumbd.Grabber()
+  var saver = new thumbd.Saver();(new thumbd.<span class="apidocCodeKeywordSpan">Worker</span>({
+    saver: saver,
+    grabber: grabber
+  })).start()
+  break
+
+case &#x27;thumbnail&#x27;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.knox" id="apidoc.element.thumbd.knox">
+        function <span class="apidocSignatureSpan">thumbd.</span>knox
+        <span class="apidocSignatureSpan">(bucket, region)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">knox = function (bucket, region) {
+  return require(&#x27;./utils&#x27;).s3(bucket, region)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Client" id="apidoc.module.thumbd.Client">module thumbd.Client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Client.Client" id="apidoc.element.thumbd.Client.Client">
+        function <span class="apidocSignatureSpan">thumbd.</span>Client
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(opts) {
+  // update client instance and config
+  // with overrides from opts.
+  _.extend(this, {
+    Saver: require(&#x27;./saver&#x27;).Saver
+  }, opts)
+
+  config.extend(opts)
+
+  // allow sqs to be overridden
+  // in tests.
+  if (opts &#x26;&#x26; opts.sqs) {
+    this.sqs = opts.sqs
+    delete opts.sqs
+  } else {
+    this.sqs = new aws.SQS({
+      accessKeyId: config.get(&#x27;awsKey&#x27;),
+      secretAccessKey: config.get(&#x27;awsSecret&#x27;),
+      region: config.get(&#x27;awsRegion&#x27;)
+    })
+  }
+
+  config.set(&#x27;sqsQueueUrl&#x27;, this.sqs.endpoint.protocol + &#x27;//&#x27; + this.sqs.endpoint.hostname + &#x27;/&#x27; + config.get(&#x27;sqsQueue&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// allow region/bucket to vary on a job by job basis.
+if (argv.bucket) extraOpts.bucket = argv.bucket
+if (argv.aws_region) extraOpts.region = argv.aws_region
+if (argv.image_region) extraOpts.region = argv.image_region
+
+config.extend(opts)
+
+var client = new thumbd.<span class="apidocCodeKeywordSpan">Client</span>()
+var logger = require(config.get(&#x27;logger&#x27;))
+
+client.thumbnail(
+  opts.remoteImage,
+  JSON.parse(fs.readFileSync(opts.descriptions).toString()),
+  extraOpts,
+  function (err, res) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Client.prototype" id="apidoc.module.thumbd.Client.prototype">module thumbd.Client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Client.prototype.thumbnail" id="apidoc.element.thumbd.Client.prototype.thumbnail">
+        function <span class="apidocSignatureSpan">thumbd.Client.prototype.</span>thumbnail
+        <span class="apidocSignatureSpan">(originalImagePaths, thumbnailDescriptions, opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">thumbnail = function (originalImagePaths, thumbnailDescriptions, opts, callback) {
+<span class="apidocCodeCommentSpan">  /**
+    job = {
+      &#x22;resources&#x22;: [
+        &#x22;/foo/awesome.jpg&#x22;
+      ],
+      &#x22;prefix&#x22;: &#x22;/foo/awesome&#x22;,
+      &#x22;descriptions&#x22;: [{
+        &#x22;suffix&#x22;: &#x22;small&#x22;,
+        &#x22;width&#x22;: 64,
+        &#x22;height&#x22;: 64
+      }],
+    }
+  */
+</span>
+  // additional options can be provided.
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts
+    opts = {}
+  }
+
+  // allow for either a single S3 resource, or an array.
+  if (!_.isArray(originalImagePaths)) originalImagePaths = [originalImagePaths]
+
+  // override defaults with opts.
+  opts = _.extend({
+    prefix: originalImagePaths[0].split(&#x27;.&#x27;).slice(0, -1).join(&#x27;.&#x27;),
+    resources: originalImagePaths,
+    descriptions: thumbnailDescriptions
+  }, opts)
+
+  this.sqs.sendMessage({QueueUrl: config.get(&#x27;sqsQueueUrl&#x27;), MessageBody: JSON.stringify(opts)}, function (err, result) {
+    if (callback) callback(err, result)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		s3Bucket: &#x27;thumbnails&#x27;
+	});
+
+var destination = &#x27;/example/awesome.jpg&#x27;;
+
+client.upload(&#x27;/tmp/awesome.jpg&#x27;, destination, function(err) {
+	if (err) throw err;
+	client.<span class="apidocCodeKeywordSpan">thumbnail</span>(destination, [{suffix: &#x27;small&#x27;, width: 100, height: 100,
+background: &#x27;red&#x27;, strategy: &#x27;matted&#x27;}], {
+		notify: &#x27;https://callback.example.com&#x27;, // optional web-hook when processing is done.
+		prefix: &#x27;foobar&#x27; // optional prefix for thumbnails created.
+	});
+});
+```
+
+**Thumbnailing options:**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Client.prototype.upload" id="apidoc.element.thumbd.Client.prototype.upload">
+        function <span class="apidocSignatureSpan">thumbd.Client.prototype.</span>upload
+        <span class="apidocSignatureSpan">(source, destination, opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upload = function (source, destination, opts, callback) {
+  var saver = new this.Saver()
+
+  // the options hash is optional.
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts
+    opts = {}
+  }
+  // merge the options hash with defaults from config.
+  opts = _.extend({
+    awsRegion: config.get(&#x27;awsRegion&#x27;),
+    s3Bucket: config.get(&#x27;s3Bucket&#x27;)
+  }, opts)
+
+  saver.save(opts.s3Bucket, opts.awsRegion, source, destination, opts.headers, callback)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		awsRegion: &#x27;AWS-REGION&#x27;,
+		sqsQueue: &#x27;thumbnailing-queue&#x27;,
+		s3Bucket: &#x27;thumbnails&#x27;
+	});
+
+var destination = &#x27;/example/awesome.jpg&#x27;;
+
+client.<span class="apidocCodeKeywordSpan">upload</span>(&#x27;/tmp/awesome.jpg&#x27;, destination, function(err) {
+	if (err) throw err;
+	client.thumbnail(destination, [{suffix: &#x27;small&#x27;, width: 100, height: 100, background: &#x27;red&#x27;, strategy: &#x27
+;matted&#x27;}], {
+		notify: &#x27;https://callback.example.com&#x27;, // optional web-hook when processing is done.
+		prefix: &#x27;foobar&#x27; // optional prefix for thumbnails created.
+	});
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Config" id="apidoc.module.thumbd.Config">module thumbd.Config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Config.all" id="apidoc.element.thumbd.Config.all">
+        function <span class="apidocSignatureSpan">thumbd.Config.</span>all
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function () {
+  return this.config
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Config.extend" id="apidoc.element.thumbd.Config.extend">
+        function <span class="apidocSignatureSpan">thumbd.Config.</span>extend
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (opts) {
+  this.config = _.extend(this.config, opts)
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return opts
+}
+
+switch (mode) {
+  case &#x27;server&#x27;:
+
+opts = buildOpts(serverOpts)
+config.<span class="apidocCodeKeywordSpan">extend</span>(opts)
+
+var grabber = new thumbd.Grabber()
+var saver = new thumbd.Saver();(new thumbd.Worker({
+  saver: saver,
+  grabber: grabber
+})).start()
+break
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Config.get" id="apidoc.element.thumbd.Config.get">
+        function <span class="apidocSignatureSpan">thumbd.Config.</span>get
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (name) {
+  if (this.config[name] !== undefined) return this.config[name]
+  return null
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ custom_logger: &#x27;logger&#x27;
+}
+var ndm = require(&#x27;ndm&#x27;)(&#x27;thumbd&#x27;)
+var opts = null
+
+// make console output nicer for missing arguments.
+process.on(&#x27;uncaughtException&#x27;, function (err) {
+ var logger = require(config.<span class="apidocCodeKeywordSpan">get</span>(&#x27;logger&#x27;))
+ logger.error(err.message)
+})
+
+/**
+* Extract the command line parameters
+*
+* @param object keys A mapping of cli option =&#x3e; config key names
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Config.remove" id="apidoc.element.thumbd.Config.remove">
+        function <span class="apidocSignatureSpan">thumbd.Config.</span>remove
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (name) {
+  if (this.config[name] !== undefined) {
+    delete this.config[name]
+  }
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  )
+  break
+case &#x27;install&#x27;:
+  ndm.install()
+  break
+case &#x27;remove&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">remove</span>()
+  break
+case &#x27;start&#x27;:
+  ndm.start()
+  break
+case &#x27;restart&#x27;:
+  ndm.restart()
+  break
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Config.set" id="apidoc.element.thumbd.Config.set">
+        function <span class="apidocSignatureSpan">thumbd.Config.</span>set
+        <span class="apidocSignatureSpan">(name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (name, value) {
+  this.config[name] = value
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   this.sqs = new aws.SQS({
+     accessKeyId: config.get(&#x27;awsKey&#x27;),
+     secretAccessKey: config.get(&#x27;awsSecret&#x27;),
+     region: config.get(&#x27;awsRegion&#x27;)
+   })
+ }
+
+ config.<span class="apidocCodeKeywordSpan">set</span>(&#x27;sqsQueueUrl&#x27;, this.sqs.endpoint.protocol + &#x27;//&#x27; + this
+.sqs.endpoint.hostname + &#x27;/&#x27; + config.get(&#x27;sqsQueue&#x27;))
+}
+
+/**
+* Upload a local file to S3, so that we can later thumbnail it.
+*
+* @param string source path to local file.
+* @param string destination key of file in remote s3 bucket.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Grabber" id="apidoc.module.thumbd.Grabber">module thumbd.Grabber</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Grabber.Grabber" id="apidoc.element.thumbd.Grabber.Grabber">
+        function <span class="apidocSignatureSpan">thumbd.</span>Grabber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Grabber() {
+  this.logger = require(config.get(&#x27;logger&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+switch (mode) {
+case &#x27;server&#x27;:
+
+  opts = buildOpts(serverOpts)
+  config.extend(opts)
+
+  var grabber = new thumbd.<span class="apidocCodeKeywordSpan">Grabber</span>()
+  var saver = new thumbd.Saver();(new thumbd.Worker({
+    saver: saver,
+    grabber: grabber
+  })).start()
+  break
+
+case &#x27;thumbnail&#x27;:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Grabber.prototype" id="apidoc.module.thumbd.Grabber.prototype">module thumbd.Grabber.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Grabber.prototype.download" id="apidoc.element.thumbd.Grabber.prototype.download">
+        function <span class="apidocSignatureSpan">thumbd.Grabber.prototype.</span>download
+        <span class="apidocSignatureSpan">(bucket, region, remoteImagePath, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">download = function (bucket, region, remoteImagePath, callback) {
+  var _this = this
+  var extension = remoteImagePath.split(&#x27;.&#x27;).pop()
+
+  tmp.file({dir: config.get(&#x27;tmpDir&#x27;), postfix: &#x27;.&#x27; + extension}, function (err, localImagePath, fd) {
+    if (err) return callback(err)
+
+    fs.close(fd, function () {
+      _this.logger.info(&#x27;downloading&#x27;, remoteImagePath, &#x27;from s3 to local file&#x27;, localImagePath)
+
+      var stream = fs.createWriteStream(localImagePath)
+
+      if (remoteImagePath.match(/https?:\/\//)) { // we are thumbnailing a remote image.
+        _this.getFileHTTP(remoteImagePath, localImagePath, stream, callback)
+      } else { // we are thumbnailing an Object in our thumbnail S3 bucket.
+        _this.getFileS3(bucket, region, remoteImagePath, localImagePath, stream, callback)
+      }
+    }) // close immediately, we do not use this file handle.
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param function callback The callback function
+ */
+Worker.prototype._downloadFromS3 = function (bucket, region, remoteImagePath, callback) {
+  // allow a default bucket to be overridden.
+  bucket = bucket || config.get(&#x27;s3Bucket&#x27;)
+  region = region || config.get(&#x27;awsRegion&#x27;)
+
+  this.grabber.<span class="apidocCodeKeywordSpan">download</span>(bucket, region, remoteImagePath, function (err, localPath, metadata
+) {
+    // Leave the job in the queue if an error occurs.
+    if (err) return callback(err)
+    callback(null, {localPath: localPath, metadata: metadata})
+  })
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Grabber.prototype.getFileHTTP" id="apidoc.element.thumbd.Grabber.prototype.getFileHTTP">
+        function <span class="apidocSignatureSpan">thumbd.Grabber.prototype.</span>getFileHTTP
+        <span class="apidocSignatureSpan">(remoteImagePath, localImagePath, stream, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFileHTTP = function (remoteImagePath, localImagePath, stream, callback) {
+  var protocol = remoteImagePath.match(&#x27;https://&#x27;) ? https : http
+  var req = protocol.get(remoteImagePath, function (res) {
+    res.on(&#x27;error&#x27;, function (err) {
+      stream.end()
+      callback(err)
+    })
+
+    res.on(&#x27;end&#x27;, function () {
+      stream.end()
+      callback(null, localImagePath)
+    })
+
+    res.pipe(stream)
+
+  }).on(&#x27;error&#x27;, function (err) {
+    stream.end()
+    callback(err)
+  }).on(&#x27;socket&#x27;, function (socket) { // abort connection if we&#x27;re in idle state too long.
+    socket.setTimeout(config.get(&#x27;requestTimeout&#x27;))
+    socket.on(&#x27;timeout&#x27;, function () {
+      stream.end()
+      req.abort()
+      callback(&#x27;socket timed out while downloading &#x27; + remoteImagePath)
+    })
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    fs.close(fd, function () {
+      _this.logger.info(&#x27;downloading&#x27;, remoteImagePath, &#x27;from s3 to local file&#x27;, localImagePath)
+
+      var stream = fs.createWriteStream(localImagePath)
+
+      if (remoteImagePath.match(/https?:\/\//)) { // we are thumbnailing a remote image.
+        _this.<span class="apidocCodeKeywordSpan">getFileHTTP</span>(remoteImagePath, localImagePath, stream, callback)
+      } else { // we are thumbnailing an Object in our thumbnail S3 bucket.
+        _this.getFileS3(bucket, region, remoteImagePath, localImagePath, stream, callback)
+      }
+    }) // close immediately, we do not use this file handle.
+  })
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Grabber.prototype.getFileS3" id="apidoc.element.thumbd.Grabber.prototype.getFileS3">
+        function <span class="apidocSignatureSpan">thumbd.Grabber.prototype.</span>getFileS3
+        <span class="apidocSignatureSpan">(bucket, region, remoteImagePath, localImagePath, stream, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFileS3 = function (bucket, region, remoteImagePath, localImagePath, stream, callback) {
+  var _this = this
+  var req = utils.s3(bucket, region).getFile(remoteImagePath, function (err, res) {
+    // no response should count as an error.
+    res = res || { statusCode: 503 }
+
+    if (err || res.statusCode &#x3e;= 400) {
+      stream.end()
+      return callback(Error(&#x27;error retrieving from S3 status &#x27; + res.statusCode))
+    }
+
+    stream.on(&#x27;finish&#x27;, function () {
+      stream.close(function () { callback(null, localImagePath, _this.getMeta(res)) })
+    })
+
+    res.pipe(stream)
+
+    res.on(&#x27;error&#x27;, function (err) {
+      stream.end()
+      callback(err)
+    })
+
+    res.on(&#x27;end&#x27;, function () {
+      stream.end()
+    })
+
+  }).on(&#x27;socket&#x27;, function (socket) {  // abort connection if we&#x27;re in idle state too long.
+    socket.setTimeout(config.get(&#x27;requestTimeout&#x27;))
+    socket.on(&#x27;timeout&#x27;, function () {
+      stream.end()
+      req.abort()
+      callback(&#x27;socket timeout while downloading &#x27; + remoteImagePath)
+    })
+  }).on(&#x27;error&#x27;, function (err) {
+    stream.end()
+    callback(err)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     _this.logger.info(&#x27;downloading&#x27;, remoteImagePath, &#x27;from s3 to local file&#x27;, localImagePath)
+
+     var stream = fs.createWriteStream(localImagePath)
+
+     if (remoteImagePath.match(/https?:\/\//)) { // we are thumbnailing a remote image.
+       _this.getFileHTTP(remoteImagePath, localImagePath, stream, callback)
+     } else { // we are thumbnailing an Object in our thumbnail S3 bucket.
+       _this.<span class="apidocCodeKeywordSpan">getFileS3</span>(bucket, region, remoteImagePath, localImagePath, stream, callback
+)
+     }
+   }) // close immediately, we do not use this file handle.
+ })
+}
+
+/**
+* Retrieve a file from a http(s) URI
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Grabber.prototype.getMeta" id="apidoc.element.thumbd.Grabber.prototype.getMeta">
+        function <span class="apidocSignatureSpan">thumbd.Grabber.prototype.</span>getMeta
+        <span class="apidocSignatureSpan">(res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMeta = function (res) {
+  var metadata = {}
+  if (config.get(&#x27;keepMeta&#x27;) || config.get(&#x27;keepEncryption&#x27;)) {
+    for (var prop in res.headers) {
+      if (prop === &#x27;x-amz-server-side-encryption&#x27; || prop.slice(0, 11) === config.get(&#x27;metaPrefix&#x27;)) {
+        metadata[prop] = res.headers[prop]
+      }
+    }
+  }
+
+  return metadata
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (err || res.statusCode &#x3e;= 400) {
+  stream.end()
+  return callback(Error(&#x27;error retrieving from S3 status &#x27; + res.statusCode))
+}
+
+stream.on(&#x27;finish&#x27;, function () {
+  stream.close(function () { callback(null, localImagePath, _this.<span class="apidocCodeKeywordSpan">getMeta</span>(res)) })
+})
+
+res.pipe(stream)
+
+res.on(&#x27;error&#x27;, function (err) {
+  stream.end()
+  callback(err)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Saver" id="apidoc.module.thumbd.Saver">module thumbd.Saver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Saver.Saver" id="apidoc.element.thumbd.Saver.Saver">
+        function <span class="apidocSignatureSpan">thumbd.</span>Saver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Saver() {
+  this.logger = require(config.get(&#x27;logger&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+switch (mode) {
+case &#x27;server&#x27;:
+
+  opts = buildOpts(serverOpts)
+  config.extend(opts)
+
+  var grabber = new thumbd.Grabber()
+  var saver = new thumbd.<span class="apidocCodeKeywordSpan">Saver</span>();(new thumbd.Worker({
+    saver: saver,
+    grabber: grabber
+  })).start()
+  break
+
+case &#x27;thumbnail&#x27;:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Saver.prototype" id="apidoc.module.thumbd.Saver.prototype">module thumbd.Saver.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Saver.prototype.destinationFromURL" id="apidoc.element.thumbd.Saver.prototype.destinationFromURL">
+        function <span class="apidocSignatureSpan">thumbd.Saver.prototype.</span>destinationFromURL
+        <span class="apidocSignatureSpan">(destination)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destinationFromURL = function (destination) {
+  var parsedURL = url.parse(destination)
+  return parsedURL.hostname + parsedURL.path
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x27;x-amz-acl&#x27;: config.get(&#x27;s3Acl&#x27;),
+  &#x27;x-amz-storage-class&#x27;: config.get(&#x27;s3StorageClass&#x27;)
+}
+
+_.extend(headers, metadata) // set additional meta-data headers
+
+if (destination.match(/https?:\/\//)) {
+  destination = this.<span class="apidocCodeKeywordSpan">destinationFromURL</span>(destination)
+}
+
+utils.s3(bucket, region).putFile(source, destination, headers, function (err, res) {
+  // if the region or bucket is wrong, this is reflected in a 301.
+  if (res &#x26;&#x26; res.statusCode !== 200) {
+    return callback(Error(&#x27;upload failure status = &#x27; + res.statusCode))
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Saver.prototype.save" id="apidoc.element.thumbd.Saver.prototype.save">
+        function <span class="apidocSignatureSpan">thumbd.Saver.prototype.</span>save
+        <span class="apidocSignatureSpan">(bucket, region, source, destination, metadata, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">save = function (bucket, region, source, destination, metadata, callback) {
+  var _this = this
+
+  if (typeof callback === &#x27;undefined&#x27;) {
+    callback = function () {}
+  }
+
+  var headers = {
+    &#x27;x-amz-acl&#x27;: config.get(&#x27;s3Acl&#x27;),
+    &#x27;x-amz-storage-class&#x27;: config.get(&#x27;s3StorageClass&#x27;)
+  }
+
+  _.extend(headers, metadata) // set additional meta-data headers
+
+  if (destination.match(/https?:\/\//)) {
+    destination = this.destinationFromURL(destination)
+  }
+
+  utils.s3(bucket, region).putFile(source, destination, headers, function (err, res) {
+    // if the region or bucket is wrong, this is reflected in a 301.
+    if (res &#x26;&#x26; res.statusCode !== 200) {
+      return callback(Error(&#x27;upload failure status = &#x27; + res.statusCode))
+    }
+    if (err) return callback(err)
+
+    res.on(&#x27;error&#x27;, function (err) {
+      callback(err)
+    })
+
+    res.on(&#x27;end&#x27;, function () {
+      _this.logger.info(&#x27;saved &#x27; + source + &#x27; to &#x27; + destination)
+      callback()
+    })
+    res.resume()
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ }
+ // merge the options hash with defaults from config.
+ opts = _.extend({
+   awsRegion: config.get(&#x27;awsRegion&#x27;),
+   s3Bucket: config.get(&#x27;s3Bucket&#x27;)
+ }, opts)
+
+ saver.<span class="apidocCodeKeywordSpan">save</span>(opts.s3Bucket, opts.awsRegion, source, destination, opts.headers, callback
+)
+}
+
+/**
+* Submit a thumbnailing job over SQS.
+*
+* @param string originalImagePaths Path to the image in S3 that thumbnailing should be performed on,
+*    can optionally be an array of resources.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Thumbnailer" id="apidoc.module.thumbd.Thumbnailer">module thumbd.Thumbnailer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.Thumbnailer" id="apidoc.element.thumbd.Thumbnailer.Thumbnailer">
+        function <span class="apidocSignatureSpan">thumbd.</span>Thumbnailer
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Thumbnailer(opts) {
+  // for the benefit of testing
+  // perform dependency injection.
+  _.extend(this, {
+    tmp: require(&#x27;tmp&#x27;),
+    logger: require(config.get(&#x27;logger&#x27;))
+  }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Thumbnailer.prototype" id="apidoc.module.thumbd.Thumbnailer.prototype">module thumbd.Thumbnailer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.prototype._guessStrategy" id="apidoc.element.thumbd.Thumbnailer.prototype._guessStrategy">
+        function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>_guessStrategy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_guessStrategy = function () {
+  if (this.strategy.match(/%\(.*\)s/)) {
+    return &#x27;manual&#x27;
+  } else if (!this[this.strategy]) {
+    this.onComplete(Error(&#x27;could not find strategy &#x27; + this.strategy))
+  } else {
+    return this.strategy
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ this.createConversionPath(function (err) {
+   if (err) {
+     _this.onComplete(err)
+     return
+   }
+
+   var strategy = _this.<span class="apidocCodeKeywordSpan">_guessStrategy</span>()
+   if (strategy) _this[strategy]()
+ })
+}
+
+/**
+* Choose an appropriate image manipulation
+* strategy, based on &#x27;strategy&#x27; key in job.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.prototype.bounded" id="apidoc.element.thumbd.Thumbnailer.prototype.bounded">
+        function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>bounded
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bounded = function () {
+  var dimensionsString = this.width + &#x27;X&#x27; + this.height
+  var qualityString = (this.quality ? &#x27;-quality &#x27; + this.quality + &#x27; &#x27; : &#x27;&#x27;)
+  var autoOrient = (this.autoOrient ? &#x27;-auto-orient&#x27; : &#x27;&#x27;)
+  var thumbnailCommand = config.get(&#x27;convertCommand&#x27;) + &#x27; &#x22;&#x27; + this.localPaths[0] + &#x27;[0]&#x22; &#x27; + autoOrient + &#x27; -thumbnail &#x27; + dimensionsString
+ + &#x27; &#x27; + qualityString + this.convertedPath
+
+  this.execCommand(thumbnailCommand)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.prototype.createConversionPath" id="apidoc.element.thumbd.Thumbnailer.prototype.createConversionPath">
+        function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>createConversionPath
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createConversionPath = function (callback) {
+  var _this = this
+
+  this.tmp.file({dir: config.get(&#x27;tmpDir&#x27;), postfix: &#x27;.&#x27; + this.format}, function (err, convertedPath, fd) {
+    fs.closeSync(fd) // close immediately, we do not use this file handle.
+    _this.convertedPath = convertedPath
+    callback(err)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+autoOrient: (description.autoOrient || null),
+quality: (description.quality || null),
+command: (description.command || config.get(&#x27;convertCommand&#x27;)),
+onComplete: onComplete,
+thumbnailTimeout: 20000
+  })
+
+  this.<span class="apidocCodeKeywordSpan">createConversionPath</span>(function (err) {
+if (err) {
+  _this.onComplete(err)
+  return
+}
+
+var strategy = _this._guessStrategy()
+if (strategy) _this[strategy]()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.prototype.execCommand" id="apidoc.element.thumbd.Thumbnailer.prototype.execCommand">
+        function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>execCommand
+        <span class="apidocSignatureSpan">(command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execCommand = function (command) {
+  var _this = this
+
+  exec(command, {timeout: this.thumbnailTimeout}, function (err, stdout, stderr) {
+    _this.logger.info(&#x27;running command &#x27;, command)
+
+    if (err) {
+      _this.onComplete(err)
+      return
+    }
+
+    // make sure the conversion was successful.
+    fs.stat(_this.convertedPath, function (err, stat) {
+      if (err || stat.size === 0) {
+        err = &#x27;zero byte thumbnail created&#x27;
+        _this.onComplete(err)
+        return
+      }
+      _this.onComplete(null, _this.convertedPath)
+    })
+
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*   * command: the conversion command to run.
+*   * localPaths: the local temp images to apply operation to.
+*   * convertedPath: path to store final thumbnail to on S3.
+*/
+Thumbnailer.prototype.manual = function () {
+ try {
+   var thumbnailCommand = sprintf(this.strategy, this)
+   this.<span class="apidocCodeKeywordSpan">execCommand</span>(thumbnailCommand)
+ } catch (err) {
+   this.onComplete(err)
+ }
+}
+
+/**
+* Convert the image using the matted strategy
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.prototype.execute" id="apidoc.element.thumbd.Thumbnailer.prototype.execute">
+        function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>execute
+        <span class="apidocSignatureSpan">(description, localPaths, onComplete)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (description, localPaths, onComplete) {
+  var _this = this
+
+  // Convert single path to array
+  if (!_.isArray(localPaths)) {
+    localPaths = [localPaths]
+  }
+
+  // parameters for a single execution
+  // of the thumbnailer.
+  _.extend(this, {
+    localPaths: localPaths,
+    width: description.width,
+    height: description.height,
+    format: (description.format || &#x27;jpg&#x27;),
+    strategy: (description.strategy || &#x27;bounded&#x27;),
+    background: (description.background || &#x27;black&#x27;),
+    autoOrient: (description.autoOrient || null),
+    quality: (description.quality || null),
+    command: (description.command || config.get(&#x27;convertCommand&#x27;)),
+    onComplete: onComplete,
+    thumbnailTimeout: 20000
+  })
+
+  this.createConversionPath(function (err) {
+    if (err) {
+      _this.onComplete(err)
+      return
+    }
+
+    var strategy = _this._guessStrategy()
+    if (strategy) _this[strategy]()
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  _this.logger.error(err)
+  return callback(err)
+}
+
+// Create thumbnailing work for each thumbnail description.
+job.descriptions.forEach(function (description) {
+  work.push(function (done) {
+    var remoteImagePath = _this._thumbnailKey(job.prefix, description.suffix, description.format);(new Thumbnailer()).<span class
+="apidocCodeKeywordSpan">execute</span>(description, localPaths, function (err, convertedImagePath) {
+      if (err) {
+        _this.logger.error(err)
+        done()
+      } else {
+        _this._saveThumbnailToS3(bucket, region, convertedImagePath, remoteImagePath, s3Downloads[0].metadata, function (err) {
+          if (err) _this.logger.error(err)
+          done(null, remoteImagePath)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.prototype.fill" id="apidoc.element.thumbd.Thumbnailer.prototype.fill">
+        function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>fill
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fill = function () {
+  var dimensionsString = this.width + &#x27;X&#x27; + this.height
+  var qualityString = (this.quality ? &#x27;-quality &#x27; + this.quality : &#x27;&#x27;)
+  var autoOrient = (this.autoOrient ? &#x27;-auto-orient&#x27; : &#x27;&#x27;)
+  var thumbnailCommand = config.get(&#x27;convertCommand&#x27;) + &#x27; &#x22;&#x27; + this.localPaths[0] + &#x27;[0]&#x22; &#x27; + autoOrient + &#x27; -resize &#x27; + dimensionsString
+ + &#x27;^ -gravity center -extent &#x27; + dimensionsString + &#x27; &#x27; + qualityString + &#x27; &#x27; + this.convertedPath
+
+  this.execCommand(thumbnailCommand)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.prototype.manual" id="apidoc.element.thumbd.Thumbnailer.prototype.manual">
+        function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>manual
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">manual = function () {
+  try {
+    var thumbnailCommand = sprintf(this.strategy, this)
+    this.execCommand(thumbnailCommand)
+  } catch (err) {
+    this.onComplete(err)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.prototype.matted" id="apidoc.element.thumbd.Thumbnailer.prototype.matted">
+        function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>matted
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">matted = function () {
+  var dimensionsString = this.width + &#x27;X&#x27; + this.height
+  var qualityString = (this.quality ? &#x27;-quality &#x27; + this.quality : &#x27;&#x27;)
+  var autoOrient = (this.autoOrient ? &#x27;-auto-orient&#x27; : &#x27;&#x27;)
+  var thumbnailCommand = config.get(&#x27;convertCommand&#x27;) + &#x27; &#x22;&#x27; + this.localPaths[0] + &#x27;[0]&#x22; &#x27; + autoOrient + &#x27; -resize &#x27; + dimensionsString
+ + &#x27; -size &#x27; + dimensionsString + &#x27; xc:&#x27; + this.background + &#x27; +swap -gravity center&#x27; + qualityString + &#x27; -composite &#x27; + this.convertedPath
+
+  this.execCommand(thumbnailCommand)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Thumbnailer.prototype.strict" id="apidoc.element.thumbd.Thumbnailer.prototype.strict">
+        function <span class="apidocSignatureSpan">thumbd.Thumbnailer.prototype.</span>strict
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">strict = function () {
+  var dimensionsString = this.width + &#x27;X&#x27; + this.height
+  var qualityString = (this.quality ? &#x27;-quality &#x27; + this.quality : &#x27;&#x27;)
+  var autoOrient = (this.autoOrient ? &#x27;-auto-orient&#x27; : &#x27;&#x27;)
+  var thumbnailCommand = config.get(&#x27;convertCommand&#x27;) + &#x27; &#x22;&#x27; + this.localPaths[0] + &#x27;[0]&#x22; &#x27; + autoOrient + &#x27; -resize &#x27; + dimensionsString
+ + &#x27;! &#x27; + qualityString + &#x27; &#x27; + this.convertedPath
+
+  this.execCommand(thumbnailCommand)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Worker" id="apidoc.module.thumbd.Worker">module thumbd.Worker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.Worker" id="apidoc.element.thumbd.Worker.Worker">
+        function <span class="apidocSignatureSpan">thumbd.</span>Worker
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Worker(opts) {
+  _.extend(this, {
+    grabber: null,
+    saver: null,
+    logger: require(config.get(&#x27;logger&#x27;))
+  }, opts)
+
+  this.sqs = new aws.SQS({
+    accessKeyId: config.get(&#x27;awsKey&#x27;),
+    secretAccessKey: config.get(&#x27;awsSecret&#x27;),
+    region: config.get(&#x27;awsRegion&#x27;)
+  })
+
+  config.set(&#x27;sqsQueueUrl&#x27;, this.sqs.endpoint.protocol + &#x27;//&#x27; + this.sqs.endpoint.hostname + &#x27;/&#x27; + config.get(&#x27;sqsQueue&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+switch (mode) {
+case &#x27;server&#x27;:
+
+  opts = buildOpts(serverOpts)
+  config.extend(opts)
+
+  var grabber = new thumbd.Grabber()
+  var saver = new thumbd.Saver();(new thumbd.<span class="apidocCodeKeywordSpan">Worker</span>({
+    saver: saver,
+    grabber: grabber
+  })).start()
+  break
+
+case &#x27;thumbnail&#x27;:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.Worker.prototype" id="apidoc.module.thumbd.Worker.prototype">module thumbd.Worker.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype._createThumbnails" id="apidoc.element.thumbd.Worker.prototype._createThumbnails">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_createThumbnails
+        <span class="apidocSignatureSpan">(s3Downloads, job, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createThumbnails = function (s3Downloads, job, callback) {
+  var _this = this
+  var localPaths = _.pluck(s3Downloads, &#x27;localPath&#x27;)
+  var work = []
+  var bucket = job.bucket || config.get(&#x27;s3Bucket&#x27;)
+  var region = job.region || config.get(&#x27;awsRegion&#x27;)
+
+  // Check for valid descriptions
+  if (!job.descriptions || !Array.isArray(job.descriptions)) {
+    var err = new Error(&#x27;Invalid descriptions provided&#x27;)
+    _this.logger.error(err)
+    return callback(err)
+  }
+
+  // Create thumbnailing work for each thumbnail description.
+  job.descriptions.forEach(function (description) {
+    work.push(function (done) {
+      var remoteImagePath = _this._thumbnailKey(job.prefix, description.suffix, description.format);(new Thumbnailer()).execute(
+description, localPaths, function (err, convertedImagePath) {
+        if (err) {
+          _this.logger.error(err)
+          done()
+        } else {
+          _this._saveThumbnailToS3(bucket, region, convertedImagePath, remoteImagePath, s3Downloads[0].metadata, function (err) {
+            if (err) _this.logger.error(err)
+            done(null, remoteImagePath)
+          })
+        }
+
+      })
+
+    })
+  })
+
+  // perform thumbnailing in parallel.
+  async.parallel(work, callback)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  async.waterfall([
+function (done) {
+  async.mapLimit(job.resources, 5, function (resource, done) {
+    _this._downloadFromS3(job.bucket, job.region, resource, done)
+  }, done)
+},
+function (s3Downloads, done) {
+  _this.<span class="apidocCodeKeywordSpan">_createThumbnails</span>(s3Downloads, job, function (err, uploadedFiles) {
+    async.forEach(_.pluck(s3Downloads, &#x27;localPath&#x27;), fs.unlink, function (errUnlink) {
+      if (errUnlink) {
+        _this.logger.warn(&#x27;WARNING: failed to delete temporary file &#x27; + errUnlink.path)
+      }
+      done(err, uploadedFiles)
+    })
+  })
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype._deleteJob" id="apidoc.element.thumbd.Worker.prototype._deleteJob">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_deleteJob
+        <span class="apidocSignatureSpan">(handle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_deleteJob = function (handle) {
+  var _this = this
+
+  this.sqs.deleteMessage({QueueUrl: config.get(&#x27;sqsQueueUrl&#x27;), ReceiptHandle: handle}, function (err, resp) {
+    if (err) {
+      _this.logger.error(&#x27;error deleting thumbnail job &#x27; + handle, err)
+      return
+    }
+    _this.logger.info(&#x27;deleted thumbnail job &#x27; + handle)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    } catch (e) {
+if (e instanceof SyntaxError) {
+  try {
+    // a Base64 encoded JSON string message body is also accepted.
+    body = JSON.parse(new Buffer(job.Messages[0].Body, &#x27;base64&#x27;).toString(&#x27;binary&#x27;))
+  } catch (ev) {
+    _this.logger.error(&#x27;Unable to parse JSON message &#x27; + handle)
+    _this.<span class="apidocCodeKeywordSpan">_deleteJob</span>(handle)
+    _this._nextJob()
+    return
+  }
+} else {
+  _this.logger.error(&#x27;Unable to parse JSON message &#x27; + handle)
+  _this._deleteJob(handle)
+  _this._nextJob()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype._downloadFromS3" id="apidoc.element.thumbd.Worker.prototype._downloadFromS3">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_downloadFromS3
+        <span class="apidocSignatureSpan">(bucket, region, remoteImagePath, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_downloadFromS3 = function (bucket, region, remoteImagePath, callback) {
+  // allow a default bucket to be overridden.
+  bucket = bucket || config.get(&#x27;s3Bucket&#x27;)
+  region = region || config.get(&#x27;awsRegion&#x27;)
+
+  this.grabber.download(bucket, region, remoteImagePath, function (err, localPath, metadata) {
+    // Leave the job in the queue if an error occurs.
+    if (err) return callback(err)
+    callback(null, {localPath: localPath, metadata: metadata})
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!job.prefix) job.prefix = job.resources[0].split(&#x27;.&#x27;).slice(0, -1).join(&#x27;.&#x27;)
+
+var _this = this
+
+async.waterfall([
+  function (done) {
+    async.mapLimit(job.resources, 5, function (resource, done) {
+      _this.<span class="apidocCodeKeywordSpan">_downloadFromS3</span>(job.bucket, job.region, resource, done)
+    }, done)
+  },
+  function (s3Downloads, done) {
+    _this._createThumbnails(s3Downloads, job, function (err, uploadedFiles) {
+      async.forEach(_.pluck(s3Downloads, &#x27;localPath&#x27;), fs.unlink, function (errUnlink) {
+        if (errUnlink) {
+          _this.logger.warn(&#x27;WARNING: failed to delete temporary file &#x27; + errUnlink.path)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype._nextJob" id="apidoc.element.thumbd.Worker.prototype._nextJob">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_nextJob
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_nextJob = function () {
+  var _this = this
+
+  process.nextTick(function () {
+    _this._processSQSMessage()
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var _this = this
+
+  this.logger.info(&#x27;wait for message on &#x27; + config.get(&#x27;sqsQueue&#x27;))
+
+  this.sqs.receiveMessage({ QueueUrl: config.get(&#x27;sqsQueueUrl&#x27;), MaxNumberOfMessages: 1 }, function (err, job) {
+if (err) {
+  _this.logger.error(err)
+  _this.<span class="apidocCodeKeywordSpan">_nextJob</span>()
+  return
+}
+
+if (!job.Messages || job.Messages.length === 0) {
+  _this._nextJob()
+  return
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype._notify" id="apidoc.element.thumbd.Worker.prototype._notify">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_notify
+        <span class="apidocSignatureSpan">(job, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_notify = function (job, cb) {
+  var _this = this
+
+  if (!job.notify) return cb()
+
+  var options = {
+    method: &#x27;POST&#x27;,
+    url: job.notify,
+    json: true,
+    body: job
+  }
+
+  request.post(options, function (err) {
+    if (!err) _this.logger.error(&#x27;notified:&#x27;, job.notify)
+    return cb()
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+        done(err, uploadedFiles)
+      })
+    })
+  },
+  function (uploadedFiles, done) {
+    job.output = uploadedFiles
+    _this.<span class="apidocCodeKeywordSpan">_notify</span>(job, done)
+  }
+], function (err) {
+  // delete message
+  _this._deleteJob(handle)
+  if (err) _this.logger.error(err.message)
+  callback()
+})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype._processSQSMessage" id="apidoc.element.thumbd.Worker.prototype._processSQSMessage">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_processSQSMessage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_processSQSMessage = function () {
+  var _this = this
+
+  this.logger.info(&#x27;wait for message on &#x27; + config.get(&#x27;sqsQueue&#x27;))
+
+  this.sqs.receiveMessage({ QueueUrl: config.get(&#x27;sqsQueueUrl&#x27;), MaxNumberOfMessages: 1 }, function (err, job) {
+    if (err) {
+      _this.logger.error(err)
+      _this._nextJob()
+      return
+    }
+
+    if (!job.Messages || job.Messages.length === 0) {
+      _this._nextJob()
+      return
+    }
+
+    // Handle the message we pulled off the queue.
+    var handle = job.Messages[0].ReceiptHandle
+    var body = null
+
+    try { // a JSON string message body is accepted.
+      body = JSON.parse(job.Messages[0].Body)
+    } catch (e) {
+      if (e instanceof SyntaxError) {
+        try {
+          // a Base64 encoded JSON string message body is also accepted.
+          body = JSON.parse(new Buffer(job.Messages[0].Body, &#x27;base64&#x27;).toString(&#x27;binary&#x27;))
+        } catch (ev) {
+          _this.logger.error(&#x27;Unable to parse JSON message &#x27; + handle)
+          _this._deleteJob(handle)
+          _this._nextJob()
+          return
+        }
+      } else {
+        _this.logger.error(&#x27;Unable to parse JSON message &#x27; + handle)
+        _this._deleteJob(handle)
+        _this._nextJob()
+        return
+      }
+    }
+
+    _this._runJob(handle, body, function () {
+      _this._nextJob()
+    })
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+config.set(&#x27;sqsQueueUrl&#x27;, this.sqs.endpoint.protocol + &#x27;//&#x27; + this.sqs.endpoint.hostname + &#x27;/&#x27; + config
+.get(&#x27;sqsQueue&#x27;))
+}
+
+/**
+ * Start the worker
+ */
+Worker.prototype.start = function () {
+this.<span class="apidocCodeKeywordSpan">_processSQSMessage</span>()
+}
+
+/**
+ * Process the next message in the queue
+ */
+Worker.prototype._processSQSMessage = function () {
+var _this = this
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype._runJob" id="apidoc.element.thumbd.Worker.prototype._runJob">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_runJob
+        <span class="apidocSignatureSpan">(handle, job, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_runJob = function (handle, job, callback) {
+<span class="apidocCodeCommentSpan">  /**
+    job = {
+      &#x22;original&#x22;: &#x22;/foo/awesome.jpg&#x22;,
+      // OR:
+      &#x22;resources&#x22;: [
+      // List of resources to download
+      ],
+      &#x22;prefix&#x22;: &#x22;/foo/awesome&#x22;,
+      &#x22;descriptions&#x22;: [{
+        &#x22;suffix&#x22;: &#x22;small&#x22;,
+        &#x22;width&#x22;: 64,
+        &#x22;height&#x22;: 64
+      }],
+    }
+  */
+</span>
+  // handle legacy, &#x27;original&#x27; key vs. &#x27;resources&#x27;.
+  if (job.original) job.resources = [job.original]
+
+  // if the prefix is missing, default to the filename.
+  if (!job.prefix) job.prefix = job.resources[0].split(&#x27;.&#x27;).slice(0, -1).join(&#x27;.&#x27;)
+
+  var _this = this
+
+  async.waterfall([
+    function (done) {
+      async.mapLimit(job.resources, 5, function (resource, done) {
+        _this._downloadFromS3(job.bucket, job.region, resource, done)
+      }, done)
+    },
+    function (s3Downloads, done) {
+      _this._createThumbnails(s3Downloads, job, function (err, uploadedFiles) {
+        async.forEach(_.pluck(s3Downloads, &#x27;localPath&#x27;), fs.unlink, function (errUnlink) {
+          if (errUnlink) {
+            _this.logger.warn(&#x27;WARNING: failed to delete temporary file &#x27; + errUnlink.path)
+          }
+          done(err, uploadedFiles)
+        })
+      })
+    },
+    function (uploadedFiles, done) {
+      job.output = uploadedFiles
+      _this._notify(job, done)
+    }
+  ], function (err) {
+    // delete message
+    _this._deleteJob(handle)
+    if (err) _this.logger.error(err.message)
+    callback()
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+       _this.logger.error(&#x27;Unable to parse JSON message &#x27; + handle)
+       _this._deleteJob(handle)
+       _this._nextJob()
+       return
+     }
+   }
+
+   _this.<span class="apidocCodeKeywordSpan">_runJob</span>(handle, body, function () {
+     _this._nextJob()
+   })
+ })
+}
+
+/**
+* asynchronously enqueue reading the next thumbnail
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype._saveThumbnailToS3" id="apidoc.element.thumbd.Worker.prototype._saveThumbnailToS3">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_saveThumbnailToS3
+        <span class="apidocSignatureSpan">(bucket, region, convertedImagePath, remoteImagePath, metadata, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_saveThumbnailToS3 = function (bucket, region, convertedImagePath, remoteImagePath, metadata, callback) {
+  this.saver.save(bucket, region, convertedImagePath, remoteImagePath, metadata, function (err) {
+    fs.unlink(convertedImagePath, function () {
+      callback(err)
+    })
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  job.descriptions.forEach(function (description) {
+    work.push(function (done) {
+var remoteImagePath = _this._thumbnailKey(job.prefix, description.suffix, description.format);(new Thumbnailer()).execute(description
+, localPaths, function (err, convertedImagePath) {
+  if (err) {
+    _this.logger.error(err)
+    done()
+  } else {
+    _this.<span class="apidocCodeKeywordSpan">_saveThumbnailToS3</span>(bucket, region, convertedImagePath, remoteImagePath, s3Downloads
+[0].metadata, function (err) {
+      if (err) _this.logger.error(err)
+      done(null, remoteImagePath)
+    })
+  }
+
+})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype._thumbnailKey" id="apidoc.element.thumbd.Worker.prototype._thumbnailKey">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>_thumbnailKey
+        <span class="apidocSignatureSpan">(prefix, suffix, format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_thumbnailKey = function (prefix, suffix, format) {
+  return prefix + &#x27;_&#x27; + suffix + &#x27;.&#x27; + (format || &#x27;jpg&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  _this.logger.error(err)
+  return callback(err)
+}
+
+// Create thumbnailing work for each thumbnail description.
+job.descriptions.forEach(function (description) {
+  work.push(function (done) {
+    var remoteImagePath = _this.<span class="apidocCodeKeywordSpan">_thumbnailKey</span>(job.prefix, description.suffix, description
+.format);(new Thumbnailer()).execute(description, localPaths, function (err, convertedImagePath) {
+      if (err) {
+        _this.logger.error(err)
+        done()
+      } else {
+        _this._saveThumbnailToS3(bucket, region, convertedImagePath, remoteImagePath, s3Downloads[0].metadata, function (err) {
+          if (err) _this.logger.error(err)
+          done(null, remoteImagePath)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.Worker.prototype.start" id="apidoc.element.thumbd.Worker.prototype.start">
+        function <span class="apidocSignatureSpan">thumbd.Worker.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+  this._processSQSMessage()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+opts = buildOpts(serverOpts)
+config.extend(opts)
+
+var grabber = new thumbd.Grabber()
+var saver = new thumbd.Saver();(new thumbd.Worker({
+  saver: saver,
+  grabber: grabber
+})).<span class="apidocCodeKeywordSpan">start</span>()
+break
+
+  case &#x27;thumbnail&#x27;:
+
+opts = buildOpts(thumbnailOpts)
+var extraOpts = {}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.client" id="apidoc.module.thumbd.client">module thumbd.client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.client.Client" id="apidoc.element.thumbd.client.Client">
+        function <span class="apidocSignatureSpan">thumbd.client.</span>Client
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(opts) {
+  // update client instance and config
+  // with overrides from opts.
+  _.extend(this, {
+    Saver: require(&#x27;./saver&#x27;).Saver
+  }, opts)
+
+  config.extend(opts)
+
+  // allow sqs to be overridden
+  // in tests.
+  if (opts &#x26;&#x26; opts.sqs) {
+    this.sqs = opts.sqs
+    delete opts.sqs
+  } else {
+    this.sqs = new aws.SQS({
+      accessKeyId: config.get(&#x27;awsKey&#x27;),
+      secretAccessKey: config.get(&#x27;awsSecret&#x27;),
+      region: config.get(&#x27;awsRegion&#x27;)
+    })
+  }
+
+  config.set(&#x27;sqsQueueUrl&#x27;, this.sqs.endpoint.protocol + &#x27;//&#x27; + this.sqs.endpoint.hostname + &#x27;/&#x27; + config.get(&#x27;sqsQueue&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// allow region/bucket to vary on a job by job basis.
+if (argv.bucket) extraOpts.bucket = argv.bucket
+if (argv.aws_region) extraOpts.region = argv.aws_region
+if (argv.image_region) extraOpts.region = argv.image_region
+
+config.extend(opts)
+
+var client = new thumbd.<span class="apidocCodeKeywordSpan">Client</span>()
+var logger = require(config.get(&#x27;logger&#x27;))
+
+client.thumbnail(
+  opts.remoteImage,
+  JSON.parse(fs.readFileSync(opts.descriptions).toString()),
+  extraOpts,
+  function (err, res) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.grabber" id="apidoc.module.thumbd.grabber">module thumbd.grabber</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.grabber.Grabber" id="apidoc.element.thumbd.grabber.Grabber">
+        function <span class="apidocSignatureSpan">thumbd.grabber.</span>Grabber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Grabber() {
+  this.logger = require(config.get(&#x27;logger&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+switch (mode) {
+case &#x27;server&#x27;:
+
+  opts = buildOpts(serverOpts)
+  config.extend(opts)
+
+  var grabber = new thumbd.<span class="apidocCodeKeywordSpan">Grabber</span>()
+  var saver = new thumbd.Saver();(new thumbd.Worker({
+    saver: saver,
+    grabber: grabber
+  })).start()
+  break
+
+case &#x27;thumbnail&#x27;:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.logger" id="apidoc.module.thumbd.logger">module thumbd.logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.logger.error" id="apidoc.element.thumbd.logger.error">
+        function <span class="apidocSignatureSpan">thumbd.logger.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function () {
+  if (config.get(&#x27;logLevel&#x27;) !== &#x27;silent&#x27;) console.warn.apply(this, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+var ndm = require(&#x27;ndm&#x27;)(&#x27;thumbd&#x27;)
+var opts = null
+
+// make console output nicer for missing arguments.
+process.on(&#x27;uncaughtException&#x27;, function (err) {
+ var logger = require(config.get(&#x27;logger&#x27;))
+ logger.<span class="apidocCodeKeywordSpan">error</span>(err.message)
+})
+
+/**
+* Extract the command line parameters
+*
+* @param object keys A mapping of cli option =&#x3e; config key names
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.logger.info" id="apidoc.element.thumbd.logger.info">
+        function <span class="apidocSignatureSpan">thumbd.logger.</span>info
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function () {
+  if (config.get(&#x27;logLevel&#x27;) === &#x27;info&#x27;) console.info.apply(this, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    opts.remoteImage,
+    JSON.parse(fs.readFileSync(opts.descriptions).toString()),
+    extraOpts,
+    function (err, res) {
+      if (err) {
+        logger.error(err)
+      } else {
+        logger.<span class="apidocCodeKeywordSpan">info</span>(res)
+      }
+    }
+  )
+  break
+case &#x27;install&#x27;:
+  ndm.install()
+  break
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.logger.warn" id="apidoc.element.thumbd.logger.warn">
+        function <span class="apidocSignatureSpan">thumbd.logger.</span>warn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function () {
+  var logLevel = config.get(&#x27;logLevel&#x27;)
+
+  if (logLevel === &#x27;info&#x27; || logLevel === &#x27;warn&#x27;) console.warn.apply(this, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _this._downloadFromS3(job.bucket, job.region, resource, done)
+  }, done)
+},
+function (s3Downloads, done) {
+  _this._createThumbnails(s3Downloads, job, function (err, uploadedFiles) {
+    async.forEach(_.pluck(s3Downloads, &#x27;localPath&#x27;), fs.unlink, function (errUnlink) {
+      if (errUnlink) {
+        _this.logger.<span class="apidocCodeKeywordSpan">warn</span>(&#x27;WARNING: failed to delete temporary file &#x27; + errUnlink
+.path)
+      }
+      done(err, uploadedFiles)
+    })
+  })
+},
+function (uploadedFiles, done) {
+  job.output = uploadedFiles
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.saver" id="apidoc.module.thumbd.saver">module thumbd.saver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.saver.Saver" id="apidoc.element.thumbd.saver.Saver">
+        function <span class="apidocSignatureSpan">thumbd.saver.</span>Saver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Saver() {
+  this.logger = require(config.get(&#x27;logger&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+switch (mode) {
+case &#x27;server&#x27;:
+
+  opts = buildOpts(serverOpts)
+  config.extend(opts)
+
+  var grabber = new thumbd.Grabber()
+  var saver = new thumbd.<span class="apidocCodeKeywordSpan">Saver</span>();(new thumbd.Worker({
+    saver: saver,
+    grabber: grabber
+  })).start()
+  break
+
+case &#x27;thumbnail&#x27;:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.thumbnailer" id="apidoc.module.thumbd.thumbnailer">module thumbd.thumbnailer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.thumbnailer.Thumbnailer" id="apidoc.element.thumbd.thumbnailer.Thumbnailer">
+        function <span class="apidocSignatureSpan">thumbd.thumbnailer.</span>Thumbnailer
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Thumbnailer(opts) {
+  // for the benefit of testing
+  // perform dependency injection.
+  _.extend(this, {
+    tmp: require(&#x27;tmp&#x27;),
+    logger: require(config.get(&#x27;logger&#x27;))
+  }, opts)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.utils" id="apidoc.module.thumbd.utils">module thumbd.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.utils.s3" id="apidoc.element.thumbd.utils.s3">
+        function <span class="apidocSignatureSpan">thumbd.utils.</span>s3
+        <span class="apidocSignatureSpan">(_bucket, _region)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">s3 = function (_bucket, _region) {
+  var bucket = _bucket || config.get(&#x27;s3Bucket&#x27;)
+  var region = _region || config.get(&#x27;awsRegion&#x27;)
+
+  // Knox wants &#x27;us-standard&#x27; instead of &#x27;us-east-1&#x27;.
+  if (region === &#x27;us-east-1&#x27;) region = &#x27;us-standard&#x27;
+
+  // cache the most recently used client.
+  if (client &#x26;&#x26; bucket === client.bucket &#x26;&#x26; region === client.region) {
+    return client
+  } else {
+    client = knox.createClient({
+      key: config.get(&#x27;awsKey&#x27;),
+      secret: config.get(&#x27;awsSecret&#x27;),
+      bucket: bucket,
+      region: region
+    })
+  }
+
+  return client
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param string remoteImagePath The S3 path
+ * @param string localImagePath The local image path
+ * @param WriteStream stream The stream object for the local file
+ * @param function callback The callback function
+ */
+Grabber.prototype.getFileS3 = function (bucket, region, remoteImagePath, localImagePath, stream, callback) {
+  var _this = this
+  var req = utils.<span class="apidocCodeKeywordSpan">s3</span>(bucket, region).getFile(remoteImagePath, function (err, res) {
+// no response should count as an error.
+res = res || { statusCode: 503 }
+
+if (err || res.statusCode &#x3e;= 400) {
+  stream.end()
+  return callback(Error(&#x27;error retrieving from S3 status &#x27; + res.statusCode))
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.thumbd.worker" id="apidoc.module.thumbd.worker">module thumbd.worker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.thumbd.worker.Worker" id="apidoc.element.thumbd.worker.Worker">
+        function <span class="apidocSignatureSpan">thumbd.worker.</span>Worker
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Worker(opts) {
+  _.extend(this, {
+    grabber: null,
+    saver: null,
+    logger: require(config.get(&#x27;logger&#x27;))
+  }, opts)
+
+  this.sqs = new aws.SQS({
+    accessKeyId: config.get(&#x27;awsKey&#x27;),
+    secretAccessKey: config.get(&#x27;awsSecret&#x27;),
+    region: config.get(&#x27;awsRegion&#x27;)
+  })
+
+  config.set(&#x27;sqsQueueUrl&#x27;, this.sqs.endpoint.protocol + &#x27;//&#x27; + this.sqs.endpoint.hostname + &#x27;/&#x27; + config.get(&#x27;sqsQueue&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+switch (mode) {
+case &#x27;server&#x27;:
+
+  opts = buildOpts(serverOpts)
+  config.extend(opts)
+
+  var grabber = new thumbd.Grabber()
+  var saver = new thumbd.Saver();(new thumbd.<span class="apidocCodeKeywordSpan">Worker</span>({
+    saver: saver,
+    grabber: grabber
+  })).start()
+  break
+
+case &#x27;thumbnail&#x27;:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
